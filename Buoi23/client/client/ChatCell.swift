@@ -10,9 +10,12 @@ import UIKit
 
 class ChatCell: UITableViewCell {
 
+    @IBOutlet weak var lbContent: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        lbContent.layer.masksToBounds = true
+        lbContent.layer.cornerRadius = 12
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

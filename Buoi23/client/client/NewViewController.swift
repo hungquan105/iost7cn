@@ -10,21 +10,22 @@ import UIKit
 
 class NewViewController: UIViewController {
 
+    @IBOutlet weak var imgv: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func MoveImage(_ sender: UIPanGestureRecognizer) {
+        let point = sender.translation(in: view)
+        sender.view?.transform = (sender.view?.transform.translatedBy(x: point.x, y: point.y))!
+        sender.setTranslation(CGPoint.zero, in: view)
     }
-    */
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let point = touches.first?.location(in: view)
+//        print(point)
+    }
 
 }

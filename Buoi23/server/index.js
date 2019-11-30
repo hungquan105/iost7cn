@@ -13,6 +13,8 @@ io.on('connection', function(socket){
     socket.on('client-send', function(data){
         console.log(data);
         io.emit('server-send', data);
+        // socket.emit('tui-gui', data);
+        // socket.broadcast.emit('nguoi-ta-gui', data);
         // socket.emit (gui lai cho nguoi gui)
         // socket.broadcast.emit (gui cho toan server ngoai tru nguoi gui)
     });
